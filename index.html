@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Teste - Google Tag Manager</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M3HFZLK8');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3HFZLK8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Header de Navegação -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <a href="index.html">GTM Estudos</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Início</a>
+                <a href="tracking.html" class="nav-link">Tracking</a>
+                <a href="ga4.html" class="nav-link">GA4</a>
+                <a href="google-ads.html" class="nav-link">Google Ads</a>
+                <a href="meta-ads.html" class="nav-link">Meta Ads</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Google Tag Manager - Guia Prático</h1>
+        <p class="lead-text">Aprenda os conceitos fundamentais do Google Tag Manager: Containers, Variáveis e Acionadores. Esta página é focada exclusivamente no GTM.</p>
+
+        <!-- Aviso sobre Tracking -->
+        <div class="section" style="background: #f8f9fa; border-left: 3px solid #2c3e50;">
+            <h3 style="margin-top: 0; color: #2c3e50;">Sobre Tracking em Geral</h3>
+            <p>Esta página aborda <strong>especificamente o Google Tag Manager</strong>. Para aprender sobre tracking profissional de forma ampla (o que é tracking, carreira, base de conhecimento), acesse o <a href="tracking.html">Guia de Tracking Profissional</a>.</p>
+        </div>
+
+        <!-- Botões Destacados -->
+        <div class="cta-grid">
+            <div class="cta-hero">
+                <div class="cta-hero-content">
+                    <div class="cta-hero-text">
+                        <h3>Tracking Profissional</h3>
+                        <p>Guia completo sobre rastreamento digital e carreira em tracking.</p>
+                    </div>
+                    <div class="cta-hero-button">
+                        <a href="tracking.html" class="btn btn-hero">Acessar Guia</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-hero">
+                <div class="cta-hero-content">
+                    <div class="cta-hero-text">
+                        <h3>Google Analytics 4</h3>
+                        <p>Guia completo sobre GA4, eventos, relatórios e configuração.</p>
+                    </div>
+                    <div class="cta-hero-button">
+                        <a href="ga4.html" class="btn btn-hero">Acessar Guia</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-hero">
+                <div class="cta-hero-content">
+                    <div class="cta-hero-text">
+                        <h3>Tracking no Google Ads</h3>
+                        <p>Guia completo sobre rastreamento de conversões e integração com Google Ads.</p>
+                    </div>
+                    <div class="cta-hero-button">
+                        <a href="google-ads.html" class="btn btn-hero">Acessar Guia</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-hero">
+                <div class="cta-hero-content">
+                    <div class="cta-hero-text">
+                        <h3>Tracking no Meta Ads</h3>
+                        <p>Guia completo sobre Meta Pixel, rastreamento e remarketing no Facebook/Instagram.</p>
+                    </div>
+                    <div class="cta-hero-button">
+                        <a href="meta-ads.html" class="btn btn-hero">Acessar Guia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Índice de Navegação -->
+        <div class="section index-section">
+            <h2>Conceitos Fundamentais do GTM</h2>
+            <p style="margin-bottom: 20px; color: #7f8c8d;">Os três pilares do Google Tag Manager que você precisa dominar:</p>
+            <nav class="index-nav">
+                <a href="#section-containers" class="index-link">
+                    <span class="index-text">Containers (GTM)</span>
+                </a>
+                <a href="#section-variaveis" class="index-link">
+                    <span class="index-text">Variáveis (GTM)</span>
+                </a>
+                <a href="#section-acionadores" class="index-link">
+                    <span class="index-text">Acionadores (GTM)</span>
+                </a>
+                <a href="#section-pratica" class="index-link">
+                    <span class="index-text">Como Funciona no GTM</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo Didático GTM -->
+        <div class="section educational" id="section-containers">
+            <h2>O que são Containers no GTM?</h2>
+            <p>Um <strong>Container</strong> é o elemento central do Google Tag Manager. É como uma "caixa" que contém todas as tags, acionadores e variáveis do GTM. É o código que você instala no seu site.</p>
+            <p style="background: #e7f3ff; padding: 12px; border-radius: 4px; border-left: 3px solid #2196F3; margin: 15px 0;"><strong>Exclusivo do GTM:</strong> Containers são específicos do Google Tag Manager. Outras ferramentas de tracking não usam este conceito.</p>
+            
+            <div class="info-box">
+                <h3>Conceito Principal do GTM</h3>
+                <p>O Container é identificado por um ID único (como <code>GTM-M3HFZLK8</code>). Cada site ou aplicativo tem seu próprio container, que funciona como um "hub central" para gerenciar todas as tags de rastreamento <strong>através do GTM</strong>.</p>
+            </div>
+
+            <h3>Como criar e instalar um Container:</h3>
+            <ol class="steps-list">
+                <li>Acesse <a href="https://tagmanager.google.com" target="_blank">tagmanager.google.com</a></li>
+                <li>Crie uma conta ou use uma existente</li>
+                <li>Clique em "Criar Container"</li>
+                <li>Escolha o tipo (Web, iOS, Android, AMP)</li>
+                <li>Copie o código fornecido e cole no seu site</li>
+            </ol>
+
+            <div class="code-example">
+                <h4>Exemplo de código do Container (já instalado neste site):</h4>
+                <pre><code>&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3HFZLK8');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;</code></pre>
+            </div>
+
+            <div class="practice-box">
+                <h4>Prática:</h4>
+                <p>O código do GTM já está instalado nesta página! Abra o console do navegador (F12) e digite <code>dataLayer</code> para ver o container funcionando.</p>
+                <button class="btn btn-info" onclick="showDataLayer()">Ver DataLayer no Console</button>
+            </div>
+        </div>
+
+        <div class="section educational" id="section-variaveis">
+            <h2>O que são Variáveis no GTM?</h2>
+            <p><strong>Variáveis</strong> no GTM são valores que a plataforma captura e armazena para usar em tags e acionadores. Elas podem ser informações da página, do usuário, ou valores personalizados.</p>
+            <p style="background: #e7f3ff; padding: 12px; border-radius: 4px; border-left: 3px solid #2196F3; margin: 15px 0;"><strong>Exclusivo do GTM:</strong> As variáveis do GTM funcionam de forma específica dentro da plataforma. Embora o conceito de variáveis exista em outras ferramentas, a implementação no GTM é única.</p>
+            
+            <div class="info-box">
+                <h3>Tipos de Variáveis do GTM:</h3>
+                <ul class="features-list">
+                    <li><strong>URL:</strong> A URL completa da página</li>
+                    <li><strong>Page Path:</strong> O caminho da URL (ex: /contato)</li>
+                    <li><strong>Page Title:</strong> O título da página</li>
+                    <li><strong>Click Element:</strong> O elemento que foi clicado</li>
+                    <li><strong>Form Element:</strong> Elementos de formulário</li>
+                    <li><strong>Custom JavaScript:</strong> Valores calculados por você</li>
+                </ul>
+            </div>
+
+            <h3>Como criar uma Variável:</h3>
+            <ol class="steps-list">
+                <li>No GTM, vá em <strong>Variáveis</strong> no menu lateral</li>
+                <li>Clique em <strong>Nova</strong></li>
+                <li>Escolha o tipo de variável (ex: "Variável de URL")</li>
+                <li>Configure as opções (ex: "Componente de URL" = "Caminho")</li>
+                <li>Dê um nome descritivo (ex: "Page Path")</li>
+                <li>Salve e publique</li>
+            </ol>
+
+            <div class="code-example">
+                <h4>Exemplo: Variável JavaScript Personalizada</h4>
+                <pre><code>function() {
+  // Retorna o ID do botão clicado
+  return {{Click Element}}.id || 'sem-id';
+}</code></pre>
+            </div>
+
+            <div class="practice-box">
+                <h4>Prática - Teste de Variáveis:</h4>
+                <p>Clique nos botões abaixo para ver variáveis sendo capturadas:</p>
+                <button class="btn" onclick="pushEvent('botao-principal', 'Clique no Botão Principal')">Botão com ID</button>
+                <button class="btn btn-secondary" onclick="pushEvent('botao-secundario', 'Clique no Botão Secundário')">Outro Botão</button>
+                <p class="practice-note">No GTM, você pode criar variáveis para capturar o ID ou texto desses botões quando clicados.</p>
+            </div>
+        </div>
+
+        <div class="section educational" id="section-acionadores">
+            <h2>O que são Acionadores (Triggers) no GTM?</h2>
+            <p><strong>Acionadores</strong> (ou Triggers) no GTM são condições que, quando atendidas, disparam as tags. Eles definem <strong>quando</strong> uma tag deve ser executada dentro do Google Tag Manager.</p>
+            <p style="background: #e7f3ff; padding: 12px; border-radius: 4px; border-left: 3px solid #2196F3; margin: 15px 0;"><strong>Exclusivo do GTM:</strong> Acionadores são a forma como o GTM controla quando as tags são disparadas. Esta funcionalidade é específica do Google Tag Manager.</p>
+            
+            <div class="info-box">
+                <h3>Tipos de Acionadores do GTM:</h3>
+                <ul class="features-list">
+                    <li><strong>Clique:</strong> Quando o usuário clica em um elemento</li>
+                    <li><strong>Envio de Formulário:</strong> Quando um formulário é enviado</li>
+                    <li><strong>Visualização de Página:</strong> Quando uma página é carregada</li>
+                    <li><strong>Scroll:</strong> Quando o usuário rola a página</li>
+                    <li><strong>Timer:</strong> Após um tempo determinado</li>
+                    <li><strong>Evento Personalizado:</strong> Quando um evento customizado é disparado</li>
+                </ul>
+            </div>
+
+            <h3>Como criar um Acionador:</h3>
+            <ol class="steps-list">
+                <li>No GTM, vá em <strong>Acionadores</strong> no menu lateral</li>
+                <li>Clique em <strong>Novo</strong></li>
+                <li>Escolha o tipo de acionador (ex: "Clique - Todos os elementos")</li>
+                <li>Configure as condições (ex: "Clique em elementos com classe 'btn'")</li>
+                <li>Dê um nome descritivo (ex: "Clique em Botões")</li>
+                <li>Salve</li>
+            </ol>
+
+            <div class="code-example">
+                <h4>Exemplo: Acionador de Clique em Botão</h4>
+                <pre><code>Tipo: Clique - Todos os elementos
+Condição: 
+  - Clique no Elemento contém "btn"
+  - OU Clique no ID contém "btn-"
+
+Isso disparará quando qualquer botão com classe "btn" for clicado.</code></pre>
+            </div>
+
+            <div class="practice-box">
+                <h4>Prática - Criando um Acionador Passo a Passo:</h4>
+                <div class="trigger-steps">
+                    <div class="trigger-step">
+                        <strong>1. Acionador de Clique em Botões:</strong>
+                        <p>Crie um acionador que dispare quando alguém clicar nos botões de teste acima.</p>
+                        <ul>
+                            <li>Tipo: <code>Clique</code></li>
+                            <li>Este acionador dispara em: <code>Todos os cliques</code></li>
+                            <li>Condições: <code>Clique no Elemento contém "btn"</code></li>
+                        </ul>
+                    </div>
+                    <div class="trigger-step">
+                        <strong>2. Acionador de Envio de Formulário:</strong>
+                        <p>Crie um acionador para quando o formulário abaixo for enviado.</p>
+                        <ul>
+                            <li>Tipo: <code>Envio de formulário</code></li>
+                            <li>Este acionador dispara em: <code>Alguns envios de formulário</code></li>
+                            <li>Condições: <code>ID do formulário é igual a "contact-form"</code></li>
+                        </ul>
+                    </div>
+                    <div class="trigger-step">
+                        <strong>3. Acionador de Scroll:</strong>
+                        <p>Crie um acionador que dispare quando o usuário rolar 50% da página.</p>
+                        <ul>
+                            <li>Tipo: <code>Rolagem</code></li>
+                            <li>Este acionador dispara em: <code>Algumas rolagens</code></li>
+                            <li>Condições: <code>Percentual de rolagem vertical é igual a 50</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section educational" id="section-pratica">
+            <h2>Como Tudo Funciona Juntos no GTM</h2>
+            <p>No Google Tag Manager, Tags, Variáveis e Acionadores trabalham em conjunto para rastrear eventos. Veja um exemplo prático de como o GTM funciona:</p>
+            
+            <div class="workflow-example">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Usuário clica no botão</h4>
+                        <p>O acionador detecta o clique</p>
+                    </div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Variáveis capturam dados</h4>
+                        <p>ID do botão, texto, URL da página, etc.</p>
+                    </div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Tag é disparada</h4>
+                        <p>Google Analytics, Facebook Pixel, etc. recebem os dados</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <h4>Exemplo Completo: Rastrear Clique em Botão</h4>
+                <pre><code>1. CRIAR VARIÁVEL:
+   Nome: "Button ID"
+   Tipo: Variável JavaScript
+   Código: function() {
+     return {{Click Element}}.id;
+   }
+
+2. CRIAR ACIONADOR:
+   Nome: "Clique em Botões"
+   Tipo: Clique - Todos os elementos
+   Condição: Clique no Elemento contém "btn"
+
+3. CRIAR TAG:
+   Nome: "GA4 - Clique em Botão"
+   Tipo: Google Analytics: GA4 Event
+   Evento: button_click
+   Parâmetros: {
+     button_id: {{Button ID}},
+     page_url: {{Page URL}}
+   }
+   Acionador: Clique em Botões</code></pre>
+            </div>
+        </div>
+
+        <!-- Área de Testes GTM -->
+        <div class="section" style="background: #f8f9fa; border-left: 3px solid #27ae60;">
+            <h2>Área de Testes - Google Tag Manager</h2>
+            <p>Use os elementos abaixo para testar implementações no GTM. Estes elementos foram criados especificamente para praticar com o Google Tag Manager.</p>
+        </div>
+
+        <div class="section">
+            <h2>Botões para Teste no GTM</h2>
+            <p>Clique nos botões abaixo para testar eventos e acionadores no GTM:</p>
+            <button class="btn" id="btn-principal">Botão Principal</button>
+            <button class="btn btn-secondary" id="btn-secundario">Botão Secundário</button>
+            <button class="btn btn-success" id="btn-sucesso">Botão de Sucesso</button>
+        </div>
+
+        <div class="section">
+            <h2>Links para Teste no GTM</h2>
+            <p>Links externos e internos para testar rastreamento de cliques no GTM:</p>
+            <ul class="links-list">
+                <li><a href="https://www.google.com" target="_blank" class="external-link">Link Externo - Google</a></li>
+                <li><a href="#section-form" class="internal-link">Link Interno - Ir para Formulário</a></li>
+                <li><a href="https://www.youtube.com" target="_blank" class="external-link">Link Externo - YouTube</a></li>
+            </ul>
+        </div>
+
+        <div class="section" id="section-form">
+            <h2>Formulário para Teste no GTM</h2>
+            <p>Preencha o formulário para testar acionadores de envio de formulário no GTM:</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Enviar Formulário</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Área de Scroll para Teste no GTM</h2>
+            <p>Role a página para testar acionadores de scroll no GTM.</p>
+            <div class="scroll-area">
+                Área para Testar Scroll
+            </div>
+        </div>
+
+        <footer>
+            <p>Site de Teste - Google Tag Manager</p>
+            <p>Use este site para praticar e aprender GTM</p>
+        </footer>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <script>
+        // Scripts básicos para facilitar testes no GTM
+        
+        // Prevenir submit padrão do formulário
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulário enviado! (Simulado)');
+            
+            // Disparar evento personalizado no dataLayer
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'form_submit',
+                    'form_id': 'contact-form',
+                    'form_name': document.getElementById('nome').value
+                });
+            }
+        });
+
+        // Função para mostrar dataLayer no console
+        function showDataLayer() {
+            if (window.dataLayer) {
+                console.log('DataLayer atual:', window.dataLayer);
+                alert('Abra o Console do navegador (F12) para ver o dataLayer!');
+            } else {
+                alert('DataLayer não encontrado. Verifique se o GTM está instalado corretamente.');
+            }
+        }
+
+        // Função para disparar eventos personalizados
+        function pushEvent(buttonId, buttonText) {
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'button_click',
+                    'button_id': buttonId,
+                    'button_text': buttonText,
+                    'page_url': window.location.href
+                });
+                alert('Evento disparado! Verifique no Preview do GTM.\n\nEvento: button_click\nID: ' + buttonId);
+            }
+        }
+
+        // Disparar evento de scroll
+        let scrollEventFired = false;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            
+            if (scrollPercent >= 50 && !scrollEventFired) {
+                scrollEventFired = true;
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        'event': 'scroll_50_percent',
+                        'scroll_percent': scrollPercent
+                    });
+                }
+            }
+        });
+
+        // Botão Voltar ao Topo
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    
+</body>
+</html>
